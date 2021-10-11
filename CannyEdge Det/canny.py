@@ -1,5 +1,4 @@
 from math import pi, sqrt, exp, atan2
-
 from numpy.lib.type_check import imag
 import cv2
 import numpy as np
@@ -104,16 +103,14 @@ def non_max_suppression(img, D):
 
     return Z
 
+#Apply Hysterisis thresholding on the thin edges
 nm_img=non_max_suppression(grad_mag,grad_dir)
 
+#Set low and high values for the edge thresholding
 low = 0.1
 high = 0.35
-
-lowt = (nm_img > low).astype(int)
-hight = (nm_img > high).astype(int)
+#Perform hysterisis thresholding
 hyst = filters.apply_hysteresis_threshold(nm_img, low, high)
-
-
 
 #Visualization
 cv2.imshow("Ix_dash",Ix_dash)
