@@ -7,7 +7,7 @@ from skimage import  filters
 
 
 #Read the gray scale image
-img = cv2.imread("img.png",cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("img3.png",cv2.IMREAD_GRAYSCALE)
 print("Image Shape: ",img.shape)
 
 #Create a 1d guassian filter of length n and std sgima
@@ -15,7 +15,7 @@ def gauss(n=11,sigma=1):
     r = range(-int(n/2),int(n/2)+1)
     return [1 / (sigma * sqrt(2*pi)) * exp(-float(x)**2/(2*sigma**2)) for x in r]
 
-sigma=7
+sigma=3
 filter_length=11
 G=gauss(filter_length,sigma)
 
@@ -113,13 +113,15 @@ high = 0.35
 hyst = filters.apply_hysteresis_threshold(nm_img, low, high)
 
 #Visualization
+
 cv2.imshow("Ix_dash",Ix_dash)
 cv2.imshow("Iy_dash",Iy_dash)
 
-cv2.imshow("NM Image",nm_img.astype(np.float))
+cv2.imshow("Non max suppresion Image",nm_img.astype(np.float))
 cv2.imshow("Grad Magnitude",grad_mag)
 cv2.imshow("Grad direction",grad_dir)
-cv2.imshow("Hysterisis Threshold",hyst.astype(float))
+
+cv2.imshow('Hysterisis thresholding',hyst.astype(float))
 cv2.imshow("Image",img)
 
 
