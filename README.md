@@ -13,7 +13,7 @@ The main code for following steps is in CannyEdgeDetection/canny.py. Simply run 
 python3 canny.py
 ```
 <h3> Steps </h3>
-1. Read a gray scale image you can find from Berkeley Segmentation Dataset, Training images, store it as a matrix named I.
+1. Read a gray scale image you can find from Berkeley Segmentation Dataset, Training images, store it as a matrix named I.\\
 2. Create a one-dimensional Gaussian mask G to convolve with I. The standard deviation(s) of this Gaussian is a parameter to the edge detector (call it σ > 0).
 3. Create a one-dimensional mask for the first derivative of the Gaussian in the x and y directions; call these Gx andGy. The same σ>0 value is used as in step2.
 4. Convolve the image I with G along the rows to give the x component image (Ix), and down the columns to give the y component image (Iy)
