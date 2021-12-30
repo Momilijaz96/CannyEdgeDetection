@@ -1,6 +1,5 @@
 # CannyEdgeDetection
 <p align='center'>
-  Detecting Canny Edges using 1D filter
 <img src='https://user-images.githubusercontent.com/53872365/147762201-4bb1b250-14b5-4544-9e41-3858ab62e67e.gif' width=25%/>
 </p>
 
